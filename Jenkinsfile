@@ -17,9 +17,7 @@ pipeline {
     stages {
 		stage('Checkout SCM') {
             steps {
-              script{
-     def projects = readJSON file: "package.json"
-            }
+              bat "npm version"
             }
         }
     }
