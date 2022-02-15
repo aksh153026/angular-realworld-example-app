@@ -17,7 +17,7 @@ pipeline {
     stages {
 		stage('Checkout SCM') {
             steps {
-             echo 'hi'
+     def projects = readJSON file: "package.json"
             }
         }
     }
