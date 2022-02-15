@@ -17,7 +17,7 @@ pipeline {
     stages {
 		stage('Checkout SCM') {
       steps{
-           def packageJSON = readJSON file: 'package.json'
+           def packageJSON = readJSON file: "package.json"
         }
     }
 }
