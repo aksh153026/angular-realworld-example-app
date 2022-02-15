@@ -16,6 +16,7 @@ pipeline {
   
     stages {
 		stage('Checkout SCM') {
+      steps{
              script {
             def oldJson = '''{
             "branch":{
@@ -31,4 +32,5 @@ pipeline {
         }
         }
     }
+}
 }
