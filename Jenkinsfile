@@ -14,8 +14,8 @@ pipeline {
     stages {
 		stage('Checkout SCM') {
             steps {
-def packageJSON = readJSON file: 'package.json'
-def packageJSONVersion = packageJSON.version
+packageJSON = readJSON file: 'package.json'
+packageJSONVersion = packageJSON.version
                
                 echo packageJSONVersion
             }
