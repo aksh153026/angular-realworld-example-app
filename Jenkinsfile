@@ -13,11 +13,12 @@ pipeline {
 		maven 'MAVEN_HOME' 
         jdk 'jdk1.8' 
     }
-  def packageJSON = readJSON file: 'package.json'
+  
     stages {
 		stage('Checkout SCM') {
             steps {
-echo packageJSON['version']
+              def packageJSON = readJSON file: 'package.json'
+              echo packageJSON['version']
             }
         }
     }
