@@ -17,7 +17,7 @@ pipeline {
     stages {
 		stage('Checkout SCM') {
       steps{
-           props = readJSON text: '{ "key": "value" }'
+           def packageJSON = readJSON file: 'package.json'
         }
     }
 }
