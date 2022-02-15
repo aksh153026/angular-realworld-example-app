@@ -3,7 +3,9 @@ pipeline {
   agent {
       label 'master'
   }
+def packageJSON = readJSON file: 'package.json'
 
+                echo packageJSON['version']
   
     tools {
  
@@ -14,10 +16,7 @@ pipeline {
     stages {
 		stage('Checkout SCM') {
             steps {
-def packageJSON = readJSON text: 'package.json'
-def packageJSONVersion = packageJSON['version']
-               
-                echo packageJSONVersion
+echo packageJSON['version']
             }
         }
     }
