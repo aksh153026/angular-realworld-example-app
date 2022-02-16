@@ -23,8 +23,11 @@ def packageJSON = readJSON file: 'package.json'
 def packageJSONVersion = packageJSON.version
          def build_version = packageJSONVersion + "."+ env.BRANCH_NAME+"."+env.BUILD_ID
 echo build_version
-          bat "npm view . version"
-
+         def i= bat "npm version"
+           bat 'npm install'
+    def packageVersion = bat 'npm run version'
+    echo $packageVersion
+  
         }
       }
     }
