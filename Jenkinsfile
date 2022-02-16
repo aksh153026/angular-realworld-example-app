@@ -24,7 +24,7 @@ def packageJSONVersion = packageJSON.version
          def build_version = packageJSONVersion + "."+ env.BRANCH_NAME+"."+env.BUILD_ID
 echo build_version
          def i= bat "npm version"
-           echo i.ang2-conduit
+           echo i["ang2-conduit"]
            bat 'npm install'
     def packageVersion = bat 'npm run version'
     echo $packageVersion
