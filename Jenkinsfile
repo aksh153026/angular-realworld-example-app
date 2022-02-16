@@ -19,6 +19,7 @@ pipeline {
       steps{
         script{
            def packageJSON = readJSON file: "package.json"
+          bat "npm run build:single-spa:Lam"
         }
       }
     }
