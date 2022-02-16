@@ -27,6 +27,7 @@ echo build_version
            bat 'npm install'
     def packageVersion = bat 'npm run version'
     echo $packageVersion
+          echo i.version
   
         }
       }
