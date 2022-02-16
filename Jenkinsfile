@@ -21,8 +21,8 @@ pipeline {
 
 def packageJSON = readJSON file: 'package.json'
 def packageJSONVersion = packageJSON.version
-         def build_version = "${env.packageJSONVersion}.${env.BRANCH_NAME}.${BUILD_ID}"
-echo packageJSONVersion
+         def build_version = packageJSONVersion+"."+BRANCH_NAME+"."+BUILD_ID
+echo packageJSONVersion+ build_version
 
         }
       }
