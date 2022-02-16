@@ -18,8 +18,12 @@ pipeline {
 		stage('Checkout SCM') {
       steps{
         script{
-           def packageJSON = readJSON file: "package.json"
-          bat "npm run build:single-spa:Lam"
+           [Monday 6:07 PM] sreekanth.t
+def packageJSON = readJSON file: 'package.json'
+def packageJSONVersion = packageJSON.version
+          build_version = "${env.packageJSONVersion}.${env.BRANCH_NAME}.${BUILD_DATE}.${BUILD_TIMESTAMP}.${BUILD_ID}"
+echo build_version
+
         }
       }
     }
