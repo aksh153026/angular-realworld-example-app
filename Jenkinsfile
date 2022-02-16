@@ -17,8 +17,10 @@ pipeline {
     stages {
 		stage('Checkout SCM') {
       steps{
+        script{
            def packageJSON = readJSON file: "package.json"
         }
+      }
     }
 }
 }
