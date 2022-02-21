@@ -24,6 +24,7 @@ def packageJSONVersion = packageJSON.version
          def build_version = packageJSONVersion + "."+ env.BRANCH_NAME+"."+env.BUILD_ID
 echo build_version
  bat "npm version "
+ bat "git"
 
         }
       }
