@@ -24,8 +24,8 @@ def packageJSONVersion = packageJSON.version
          def build_version = packageJSONVersion + "."+ env.BRANCH_NAME+"."+env.BUILD_ID
 echo build_version
  bat "npm version patch"
-
-def packageJSONVersion = packageJSON.version
+packageJSON = readJSON file: 'package.json'
+packageJSONVersion = packageJSON.version
          def build_version = packageJSONVersion + "."+ env.BRANCH_NAME+"."+env.BUILD_ID
 echo build_version
         }
